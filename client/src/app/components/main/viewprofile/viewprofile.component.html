@@ -1,0 +1,187 @@
+<div class="row justify-content-center mt-4">
+    <div class="col-6">
+        <div class="card p-3 mb-3">
+            <div class="row align-items-center h-100">
+                <div class="col-4">
+                    <img [src]="profile==null? '' : 'http://localhost:8080/'+profile.user.avatar" class="ml-auto" alt="">
+                </div>
+                <div class="col-6 overflow-hidden">
+                    <h2>{{profile!=null? profile.user.name: ''}}</h2>
+                </div>
+            </div>
+            <form [formGroup]="viewForm">
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p class="text-center"><i><strong>Personal Information</strong></i></p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Email</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="email" id="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Gender</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" formControlName="gender" value="Male">Male
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" formControlName="gender" value="Female">Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Phone number</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="phonenumber"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>DOB</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="date" class="form-control" formControlName="dob">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Facebook handle</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="facebook"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p class="text-center"><i><strong>Education Details</strong></i></p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>College Name</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="institutionName"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Marks/CGPA</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="marks_cgpa"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-group-inline">
+                                <label><small>From </small></label>
+                                <select class="form-control" formControlName="edufrom">
+                                    <option *ngFor="let i of arr(25, 2000)" value="{{i}}">{{i}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label><small>To </small></label>
+                                <select class="form-control" formControlName="eduto">
+                                    <option *ngFor="let i of arr(25, 2000)" value="{{i}}">{{i}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p class="text-center"><i><strong>Job Details</strong></i></p>
+                    <hr>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Company Name</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="companyName"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+                    <p><b>Designation</b></p>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="designation"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-right">
+
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group form-group-inline">
+                                <label><small>From </small></label>
+                                <select class="form-control" formControlName="jobfrom">
+                                    <option *ngFor="let i of arr(21, 2000)" value="{{i}}">{{i}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label><small>To </small></label>
+                                <select class="form-control" formControlName="jobto">
+                                    <option *ngFor="let i of arr(21, 2000)" value="{{i}}">{{i}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

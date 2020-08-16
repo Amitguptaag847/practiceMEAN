@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+    <div class="col-6 mb-4">
+        <div *ngFor="let match of matches" class="card mt-3 p-3">
+            <div class="row align-items-center h-100">
+                <div class="col-4">
+                    <img [src]="'http://localhost:8080/'+match.avatar" alt="">
+                </div>
+                <div class="col-8">
+                    <h3>{{match.name}}</h3>
+                    <p>Compatibility : {{match.percentage}}%</p>
+                    
+                    <button *ngFor="let com of match.matching" class="badge mr-1">{{com}}</button>
+                    <a [routerLink] = "['./viewprofile/' + match.id]" class="btn btn-sm btn-block btn-outline-dark mt-2">View profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

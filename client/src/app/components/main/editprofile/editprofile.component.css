@@ -1,0 +1,14 @@
+img {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#File-For {
+    position: absolute;
+    opacity: 0;
+}

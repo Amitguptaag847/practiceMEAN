@@ -1,0 +1,10 @@
+.login_container {
+    background-image: url('../../../assets/image/login_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;;
+    height: 100vh;
+    width: 100vw;
+}
+.h-100vh {
+    height: 100vh;
+}

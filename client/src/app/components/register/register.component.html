@@ -1,0 +1,29 @@
+<div class="register_container">
+    <div class="container">
+        <div class="row text-white h-100vh">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 m-auto text-center form p-4">
+                <div class="card card-sm px-5 py-3 mx-5">
+                    <h1 class="text-dark pb-2">Register</h1>
+                    <form [formGroup]="regForm" (ngSubmit)="onSubmit(regForm.value)">
+                        <div class="form-group">
+                            <input type="text" formControlName="name" name="name" id="name" placeholder="Name" class="form-control"/>
+                            <small class="text-danger">{{ errors.name }}</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" formControlName="email" name="email" id="email" placeholder="Email" class="form-control"/>
+                            <small class="text-danger">{{ errors.email }}</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" formControlName="password" name="password" id="pass" placeholder="Password" class="form-control"/>
+                            <small class="text-danger">{{ errors.password }}</small>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="register" id="register" class="btn btn-sm btn-block btn-primary" value="Register" [disabled]="!regForm.valid"/>
+                            <small class="form-text text-muted">Already have an account <a routerLink="/login" class="">here</a>.</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
